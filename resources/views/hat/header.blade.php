@@ -17,18 +17,12 @@
 					<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 						<ul class="nav navbar-nav">
 							<li><a class="{{ Request::is('/') ? 'active' : '' }}" href="/">HOME <span class="sr-only">(current)</span></a></li>
-							<li><a class="{{ Request::is('about') ? 'active' : '' }}" href="about">ABOUT</a></li>
-							<li class="dropdown">
-							  <a href="gallery.html" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">GALLERY<span class="caret"></span></a>
-							  <ul class="dropdown-menu">
-								<li><a class="{{ Request::is('gallery') ? 'active' : '' }}" href="gallery">Action</a></li>
-								<li><a class="{{ Request::is('gallery') ? 'active' : '' }}" href="gallery">Another action</a></li>
-								<li><a class="{{ Request::is('gallery') ? 'active' : '' }}" href="gallery">Something else here</a></li>
-							  </ul>
+							<li><a class="{{ Request::is('about') ? 'active' : '' }}" href="/about">ABOUT</a></li>
+							<li><a href="/galary" class="{{ Request::is('pages') ? 'active' : '' }}">GALLERY</a>
 							</li>
-							<li><a class="{{ Request::is('pages') ? 'active' : '' }}" href="pages">PAGES</a></li>
-							<li><a class="{{ Request::is('blog') ? 'active' : '' }}" href="blog">BLOG</a></li>
-							<li><a class="{{ Request::is('contact') ? 'active' : '' }}" href="contact">CONTACT</a></li>
+							<li><a class="{{ Request::is('pages') ? 'active' : '' }}" href="/products">PRODUCTS</a></li>
+							<li><a class="{{ Request::is('blog') ? 'active' : '' }}" href="/blog">BLOG</a></li>
+							<li><a class="{{ Request::is('contact') ? 'active' : '' }}" href="/contact">CONTACT</a></li>
 						</ul>
 					</div><!-- /.navbar-collapse -->
 						<div class="clearfix"></div>	
@@ -37,6 +31,6 @@
 				<div class="clearfix"></div>
 			</div>
 			<div class="logo">
-				<h1><a href="index.html">PET<span class="hlf"> KENNEL</span></a></h1>
+				<h1><a href="/">PET<span class="hlf"> KENNEL</span></a></h1>
 			</div>
 			

@@ -26,13 +26,14 @@
 			$().UItoTop({ easingType: 'easeOutQuart' });
 		});
 	</script>
+	@yield('head')
   </head>
   <body>
-    @include('header')
+    @include('hat.header')
 	
 	@yield('content')
 	
-	@include('footer')
+	@include('hat.footer')
 	<a href="#to-top" id="toTop" style="display: block;"> <span id="toTopHover" style="opacity: 1;"> </span></a>
   </body>
 </html>

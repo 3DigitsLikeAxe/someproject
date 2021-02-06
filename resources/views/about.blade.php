@@ -82,26 +82,13 @@
 				<div class="col-md-8 lt">
 					<div class="our-team">
 						<h3>our team</h3>
+						@foreach($teams as $team)
 						<div class="col-md-3 txt">
-							<img src="./images/entrepreneur.jpg" alt="" title="" class="img-responsive" >
-								<h4>Robert jhonson</h4>
-							<p>Lorem Ipsum is simply dummy text printing.</p>
+							<img src="{{$team->pic}}" alt="{{$team->name}}" title="{{$team->name}}" class="img-responsive" >
+								<h4>{{$team->name}}</h4>
+							<p>{{$team->description}}</p>
 						</div>
-						<div class="col-md-3 txt">
-							<img src="./images/man.jpg" alt="" title="" class="img-responsive" />
-								<h4>Bear grylls</h4>
-							<p>Lorem Ipsum is simply dummy text printing.</p>
-						</div>
-						<div class="col-md-3 txt">
-							<img src="./images/people.jpg" alt="" title="" class="img-responsive" />
-								<h4>john doe</h4>
-							<p>Lorem Ipsum is simply dummy text printing.</p>
-						</div>
-						<div class="col-md-3 txt">
-							<img src="./images/portrait.jpg" alt="" title="" class="img-responsive" />
-								  <h4>Ema stone</h4>
-							<p>Lorem Ipsum is simply dummy text printing.</p>
-						</div>
+						@endforeach
 						<div class="clearfix"></div>
 					</div>
 				</div>

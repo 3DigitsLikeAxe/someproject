@@ -4,36 +4,25 @@
 @section('content')
 			<div class="banner-slider">
 				<div id="myCarousel" class="carousel slide" data-ride="carousel">
+				
 				  <!-- Indicators -->
+				  @foreach($banners as $key => $banner)
 				  <ol class="carousel-indicators">
-					<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
-					<li data-target="#myCarousel" data-slide-to="1"></li>
-					<li data-target="#myCarousel" data-slide-to="2"></li>
+					<li data-target="#myCarousel" data-slide-to="{{$key}}" ></li>
 				  </ol>
+				  @endforeach
 				  <!-- Wrapper for slides -->
 				  <div class="carousel-inner" role="listbox">
-					<div class="item active">
-					  <img src="/images/1.jpg" alt="dog" class="img-responsive">
+				  @foreach($banners as $key => $banner)
+					<div class="item <?=($loop->first) ? 'active' : '' ?>">
+					  <a href="/products"><img src="{{$banner->img}}"  class="img-responsive"></a>
 					  <div class="carousel-caption ch">
-						<h3>Lorem ipsum dolor adipiscing elit. </h3>
-						<p>Suspendisse ut ante eget ex maximus malesuada tincidunt eu ex.</p>
+						<p>{{$banner->description}}</p>
 					  </div>
 					</div>
-					<div class="item">
-					  <img src="/images/4.jpg" alt="cat" class="img-responsive">
-					  <div class="carousel-caption ch">
-						<h3>Praesent sit amet consequat ante.</h3>
-						<p>Suspendisse ut ante eget ex maximus malesuada tincidunt eu ex.</p>
-					  </div>
-					</div>
-					<div class="item">
-					  <img src="/images/2.jpg" alt="wolfdog" class="img-responsive">
-					  <div class="carousel-caption ch">
-						<h3>Sed at ligula sed nibh rutrum pretium </h3>
-						<p>Suspendisse ut ante eget ex maximus malesuada tincidunt eu ex.</p>
-					  </div>
-					</div>
+					@endforeach
 				  </div>
+				  
 				  <!-- Controls -->
 				  <a class="carousel-control left" href="#myCarousel" role="button" data-slide="prev">
 					<span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
@@ -54,50 +43,20 @@
 	<div class="container">
 		<div class="products-gallery">
 			<h2>OUR-PRODUCTS</h2>
+			@foreach($products as $product) 
 			<div class="col-md-3 arr">
 				<div class="bg">
-				  <img src="/images/b.jpg" alt="pet" class="img-responsive">
+				  <img src="{{$product->pic}}" alt="pet" class="img-responsive">
 				  <span class="glyphicon glyphicon-heart pst" aria-hidden="true"></span>
 				  <div class="caption">
-					<h3>Muffin Cat</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-					<p><a href="#" class="btn btn-danger" role="button">More</a></p>
+					<h3>{{$product->name}}</h3>
+					<p>{{$product->description}} </p>
+					<p><a href="/products" class="btn btn-danger" role="button">More</a></p>
 				</div>
 				</div>
 			</div>
-			<div class="col-md-3 arr">
-				<div class="bg">
-				  <img src="/images/c.jpg" alt="pet" class="img-responsive">
-				  <span class="glyphicon glyphicon-heart pst" aria-hidden="true"></span>
-				  <div class="caption">
-					<h3>Doggy</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-					<p><a href="#" class="btn btn-danger" role="button">More</a> </p>
-				  </div>
-				</div>
-			</div>
-			<div class="col-md-3 arr">
-				<div class="bg">
-				  <img src="/images/d.jpg" alt="pet" class="img-responsive">
-				  <span class="glyphicon glyphicon-heart pst" aria-hidden="true"></span>
-				  <div class="caption">
-					<h3>Hamster</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-					<p><a href="#" class="btn btn-danger" role="button">More</a></p>
-				  </div>
-				</div>
-			</div>
-			<div class="col-md-3 arr">
-				<div class="bg">
-				  <img src="/images/e.jpg" alt="pet" class="img-responsive">
-				  <span class="glyphicon glyphicon-heart pst" aria-hidden="true"></span>
-				  <div class="caption">
-					<h3>Lab Doggy</h3>
-					<p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. </p>
-					<p><a href="#" class="btn btn-danger" role="button">More</a></p>
-				  </div>
-				 </div>
-			</div>
+			@endforeach
+			
 			<div class="clearfix"></div>
 		</div>
 			<div class="traits-technology">
@@ -168,3 +127,4 @@
 
 
 @endsection
+
