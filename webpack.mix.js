@@ -11,7 +11,5 @@ const mix = require('laravel-mix');
  |
  */
 
-mix.js('resources/js/app.js', 'public/js')
-    .postCss('resources/css/app.css', 'public/css', [
-        //
-    ]);
+mix.scripts(['resources/js/jquery-2.1.4.min.js','resources/js/bootstrap.min.js','resources/js/move-top.js','resources/js/easing.js'], 'public/js/all.js');
+mix.styles(['public/css/style.css','public/css/swipebox.css','public/css/bootstrap.min.css',], 'public/css/all.css');
