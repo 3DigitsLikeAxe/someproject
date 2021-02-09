@@ -90,7 +90,6 @@ class ArticlesController extends Controller
         }
         $data = request()->all();
         $data['img'] = $base ?? null;
-        Article::create($data);
 		
 		$article->img = "/storage/uploads/" . $base;
 		$article->description = request('description');
@@ -111,8 +110,18 @@ class ArticlesController extends Controller
 		]);
 	}
 	
-	public function delete()
+	public function delete($id)
 	{
-		
+		$article = Article::findOrFail($id);
+        $article->delete();
+        return redirect('/blog');
+	}
+	public function refreshToken(Request $request)
+	{
+		 session()->regenerate();
+		 return response()->json([
+			"token"=>csrf_token()],
+		  200);
+
 	}
 }

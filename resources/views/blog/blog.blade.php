@@ -33,7 +33,7 @@
 			@endforelse	
 			<p>
 			@if(!request('tag'))
-			{{$articles->links('pagination')}}
+				{{$articles->links('pagination')}}
 			@endif
 			</p>
 		</div>

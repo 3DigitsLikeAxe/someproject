@@ -26,6 +26,7 @@
 			$().UItoTop({ easingType: 'easeOutQuart' });
 		});
 	</script>
+
 	@yield('head')
   </head>
   <body>

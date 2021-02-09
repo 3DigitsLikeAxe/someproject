@@ -17,10 +17,11 @@ use Illuminate\Routing\AbstractRouteCollection;
 */
 
 Route::get('/', 'App\Http\Controllers\ProductsController@show');
-Route::get('about', 'App\Http\Controllers\TeamsController@show');
-Route::get('products', 'App\Http\Controllers\ProductsController@showList');
-Route::get('contact', function () {return view('contact');});
-Route::get('galary', 'App\Http\Controllers\ArticlesController@showGallery');
+Route::get('/about', 'App\Http\Controllers\TeamsController@show');
+Route::get('/products', 'App\Http\Controllers\ProductsController@showList');
+Route::get('/contact', function () {return view('contact');});
+Route::post('/contact', 'App\Http\Controllers\ContactController@store');
+Route::get('/galary', 'App\Http\Controllers\ArticlesController@showGallery');
 
 Route::get('/blog', 'App\Http\Controllers\ArticlesController@index');
 Route::post('/blog', 'App\Http\Controllers\ArticlesController@store');

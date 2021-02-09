@@ -20,15 +20,29 @@
 						</div>
 						<div class="col-md-6 tt brk9">
 						<div class="form">
-							<form>
+							<form method="POST" action="/contact">
+							@csrf
 								<input class="name" type="text" name="name" value="Your name" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Name';}"><br>
 								<br>
-								<input class="nuber" type="text" name="Phone number" value="Phone Number" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'Number';}"><br>
+								@error('name')
+									<p class="help is-danger"> {{$message}}</p>
+								@enderror
+								<br>
 								<br>
 								<input class="mail" type="text" name="email" value="E-mail" onfocus="this.value = '';" onblur="if (this.value == '') {this.value = 'E-mail';}"><br>
 								<br>
+								@error('email')
+									<p class="help is-danger"> {{$message}}</p>
+								@enderror
+								<br>
+								<br>
 								<button type="clear" class="btn btn-danger">Clear</button>
 								<button type="submit" class="btn btn-danger">Submit</button>
+								@if (session('message'))
+									<p class="text-green-500 text-xs mt-2">
+										{{session('message')}}
+									</p>
+								@endif	
 							</form>
 						</div>
 						</div>
